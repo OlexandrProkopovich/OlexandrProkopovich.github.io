@@ -11,7 +11,7 @@ function renderNav(lang) {
   const u = DATA.ui;
   const navItems = [
     ["about", u.nav_about], ["skills", u.nav_skills], ["projects", u.nav_projects],
-    ["experience", u.nav_experience], ["education", u.nav_education],
+    ["education", u.nav_education],
   ];
   el("nav-links").innerHTML = navItems
     .map(([id, label]) => `<a href="index.html#${id}">${esc(t(label, lang))}</a>`)

@@ -10,7 +10,7 @@ function renderHome(lang) {
   /* nav */
   const navItems = [
     ["#about", u.nav_about], ["#skills", u.nav_skills], ["#projects", u.nav_projects],
-    ["#experience", u.nav_experience], ["#education", u.nav_education],
+    ["#education", u.nav_education],
   ];
   el("nav-links").innerHTML = navItems
     .map(([href, label]) => `<a href="${href}">${esc(t(label, lang))}</a>`)
@@ -44,15 +44,15 @@ function renderHome(lang) {
   el("about-grid").innerHTML = `
     <div class="about-text">${aboutParas}</div>
     <div class="about-facts">
+      <div class="fact"><div class="k">${lang === "ua" ? "Робота" : "Work"}</div><div class="v">CDev · ${lang === "ua" ? "бер. 2025 — тепер" : "Mar 2025 — present"}</div></div>
       <div class="fact"><div class="k">${lang === "ua" ? "Локація" : "Location"}</div><div class="v">${esc(t(p.location, lang))}</div></div>
       <div class="fact"><div class="k">${lang === "ua" ? "Фокус" : "Focus"}</div><div class="v">C++ · Qt · Desktop · OCR</div></div>
-      <div class="fact"><div class="k">${lang === "ua" ? "Проектів" : "Projects"}</div><div class="v">${DATA.projects.length}</div></div>
     </div>`;
 
   /* skills */
   el("t-skills").textContent = t(u.section_skills, lang);
   el("skills-grid").innerHTML = DATA.skills
-    .map((g) => `<div class="skill-card reveal"><h3>${esc(t(g.title, lang))}</h3><div class="chips">${chips(g.items)}</div></div>`)
+    .map((g) => `<div class="skill-card reveal"><h3>${esc(t(g.title, lang))}</h3><ul class="skill-list">${g.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`)
     .join("");
 
   /* projects */
@@ -71,16 +71,6 @@ function renderHome(lang) {
         <div class="project-foot"><span class="project-link">${esc(t(u.project_view, lang))}</span></div>
       </div>
     </a>`).join("");
-
-  /* experience */
-  el("t-experience").textContent = t(u.section_experience, lang);
-  el("timeline").innerHTML = DATA.experience.map((x) => `
-    <div class="tl-item">
-      <div class="tl-period">${esc(t(x.period, lang))}</div>
-      <div class="tl-role">${esc(t(x.role, lang))}</div>
-      <div class="tl-stack">${esc(x.stack)}</div>
-      <ul>${(t(x.points, lang) || []).map((pt) => `<li>${esc(pt)}</li>`).join("")}</ul>
-    </div>`).join("");
 
   /* education */
   el("t-education").textContent = t(u.section_education, lang);

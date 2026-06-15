@@ -45,22 +45,35 @@ const DATA = {
   /* --------------------------------------------------------------------- */
   skills: [
     {
-      title: { en: "Languages", ua: "Мови" },
-      items: ["C++ (11/14/17)", "C", "Python", "QML"],
-    },
-    {
-      title: { en: "Frameworks & Tools", ua: "Фреймворки та інструменти" },
-      items: ["Qt5 (Widgets, QML)", "MFC", "CMake", "GoogleTest / CTest", "Git", "MSVC"],
-    },
-    {
-      title: { en: "Domains", ua: "Напрями" },
+      title: { en: "Desktop & Build", ua: "Десктоп і збірка" },
       items: [
-        "Optical Character Recognition (OCR)",
-        "Music notation engraving",
-        "Legacy code maintenance",
-        "Algorithm design",
-        "Neural networks (from scratch)",
-        "Client communication",
+        "Desktop C++",
+        "Qt6 Quick / QML",
+        "Qt5 Widgets",
+        "MFC / Win32 API",
+        "CMake / Ninja / MSBuild",
+        "MSVC / arm-none-eabi-gcc",
+      ],
+    },
+    {
+      title: { en: "Protocols & Interfaces", ua: "Протоколи та інтерфейси" },
+      items: [
+        "Modbus RTU / TCP",
+        "GPIB / SCPI (NI-488.2)",
+        "USB CDC (binary)",
+        "WebSocket RFC 6455",
+        "MIDI WinMM / DirectMusic",
+        "TCP/IP / UDP",
+        "HTTP REST / JSON",
+      ],
+    },
+    {
+      title: { en: "Web & Scripting", ua: "Веб і скрипти" },
+      items: [
+        "Python / Flask",
+        "HTML5 / CSS3 / JS",
+        "MySQL / SQLite",
+        "Git / GitPython",
       ],
     },
   ],
@@ -80,14 +93,12 @@ const DATA = {
       },
       description: {
         en: [
-          "ScanScore is a desktop scorewriting application built with C++ and Qt5 (Widgets and QML). Its defining feature is optical recognition: instead of entering every note by hand, a user imports a photo or scan of sheet music and the app reconstructs it as a structured, fully editable document - the staves, notes and other symbols become real objects you can move, change and export again.",
-          "I started here as a junior and gradually took ownership of features that run through the entire pipeline - the recognition step, the in-memory document model, layout and rendering, the editing UI, and file export. Several were the kind of work usually handed to mid or senior engineers, delivered end to end on a large codebase that had been maintained for years.",
-          "The larger ones were algorithmic and cross-cutting rather than cosmetic, and most of the engineering had little to do with music theory and a lot to do with data structures, geometry and image analysis. Alongside the features I tracked down crashes, owned release versioning, and translated loosely-specified client requests into working functionality.",
+          "ScanScore is a desktop scorewriting app in C++ and Qt5. Its defining feature is optical recognition: a user imports a photo or scan of sheet music and the app reconstructs it as a structured, fully editable document - staves, notes and other symbols become real objects you can move, change and export.",
+          "I started here as a junior and took ownership of features running through the whole pipeline - recognition, the in-memory document model, layout/rendering, the editing UI and file export. Most of the work was about data structures, geometry and image analysis rather than music theory, and several pieces were normally scoped to mid/senior engineers.",
         ],
         ua: [
-          "ScanScore - десктопний нотний редактор на C++ та Qt5 (Widgets і QML). Його ключова ідея - оптичне розпізнавання: замість того щоб вводити кожну ноту вручну, користувач імпортує фото чи скан нот, а застосунок відтворює їх як структурований, повністю редагований документ - нотоносці, ноти й інші символи стають реальними об'єктами, які можна рухати, змінювати й експортувати назад.",
-          "Я почав тут джуном і поступово брав на себе функції, що проходять крізь увесь конвеєр - етап розпізнавання, документну модель у пам'яті, верстку й рендеринг, UI редагування та експорт файлів. Частина з них - це робота, яку зазвичай доручають мід- чи сеньйор-інженерам, доведена від початку до кінця у великій кодовій базі, яку підтримують роками.",
-          "Найбільші задачі були радше алгоритмічні й наскрізні, ніж косметичні, і більша частина інженерії стосувалася не музичної теорії, а структур даних, геометрії та аналізу зображень. Поряд із функціями я відловлював краші, відповідав за версіонування релізів і перетворював нечітко сформульовані запити клієнта на робочу функціональність.",
+          "ScanScore - десктопний нотний редактор на C++ та Qt5. Його ключова ідея - оптичне розпізнавання: користувач імпортує фото чи скан нот, а застосунок відтворює їх як структурований, повністю редагований документ - нотоносці, ноти й інші символи стають реальними об'єктами, які можна рухати, змінювати й експортувати.",
+          "Я почав тут джуном і брав на себе функції, що проходять крізь увесь конвеєр - розпізнавання, документну модель у пам'яті, верстку/рендеринг, UI редагування та експорт. Більша частина роботи стосувалася структур даних, геометрії й аналізу зображень, а не музичної теорії, а частину задач зазвичай доручають мід-/сеньйор-інженерам.",
         ],
       },
       highlights: {
@@ -123,12 +134,12 @@ const DATA = {
       },
       description: {
         en: [
-          "PiobMaster Pro is a Windows desktop application built with C++ and MFC. Unlike a general-purpose editor, it is dedicated to creating scores from scratch for one specific instrument and notation style, with the workflow and music objects modelled around that instrument’s conventions.",
-          "As on ScanScore, my work was adding new algorithms and dialogs to solve user-facing problems, fixing bugs in existing code, and handling versioning — turning client requests into concrete, shippable features.",
+          "PiobMaster Pro is a Windows desktop application in C++ and MFC, dedicated to creating scores from scratch for one specific instrument and notation style — workflow and music objects modelled around that instrument’s conventions.",
+          "My work was adding algorithms and dialogs that solve user-facing problems, fixing bugs, and handling versioning — turning client requests into shippable features.",
         ],
         ua: [
-          "PiobMaster Pro — десктопний застосунок для Windows на C++ та MFC. На відміну від універсального редактора, він призначений для створення партитур з нуля для одного конкретного інструмента та стилю нотації, з робочим процесом і музичними обʼєктами, змодельованими під конвенції цього інструмента.",
-          "Як і в ScanScore, моя робота — додавання нових алгоритмів і діалогів, що вирішують проблеми користувачів, виправлення багів у наявному коді та керування версіями — перетворення запитів клієнта на конкретні готові до релізу функції.",
+          "PiobMaster Pro — десктопний застосунок для Windows на C++ та MFC, призначений для створення партитур з нуля для одного конкретного інструмента та стилю нотації — робочий процес і музичні обʼєкти змодельовані під конвенції цього інструмента.",
+          "Моя робота — додавання алгоритмів і діалогів, що вирішують проблеми користувачів, виправлення багів і керування версіями — перетворення запитів клієнта на готові до релізу функції.",
         ],
       },
       highlights: {
@@ -160,12 +171,12 @@ const DATA = {
       },
       description: {
         en: [
-          "Biblio_LLM searches across arXiv, PubMed and Semantic Scholar, then ranks the results. The interesting part is the ranking engine: a miniature large language model built from first principles in C++17 — no ML frameworks. It implements its own matrix math and activations, tokenizers (a vocabulary-based one and a Byte-Pair Encoding variant), embeddings, attention layers, feed-forward and full transformer blocks, plus a multi-threaded training pipeline with loss functions.",
-          "Wrapped in a Qt Widgets desktop interface, the app lets users compare the neural ranker against a classic TF-IDF baseline, view rich metadata (authors, dates, DOI, journal, abstracts), save articles as JSON, and export citations in PlainText, BibTeX and RIS. The project ships with 95 passing GoogleTest cases covering matrix ops, tokenization, embeddings, attention and transformer blocks.",
+          "Biblio_LLM searches across arXiv, PubMed and Semantic Scholar and ranks the results. The interesting part is the ranking engine: a miniature LLM built from first principles in C++17, no ML frameworks — its own matrix math, tokenizers (vocabulary-based and Byte-Pair Encoding), embeddings, attention and full transformer blocks, plus a multi-threaded training pipeline.",
+          "Wrapped in a Qt Widgets desktop UI, it compares the neural ranker against a TF-IDF baseline, shows rich metadata, saves articles as JSON, and exports citations to PlainText, BibTeX and RIS — backed by 95 passing GoogleTest cases.",
         ],
         ua: [
-          "Biblio_LLM шукає статті в arXiv, PubMed і Semantic Scholar, а потім ранжує результати. Найцікавіше — рушій ранжування: мініатюрна велика мовна модель, побудована з основ на C++17 без ML-фреймворків. Вона реалізує власну матричну математику й активації, токенайзери (на основі словника та варіант Byte-Pair Encoding), ембединги, шари уваги, feed-forward і повноцінні трансформерні блоки, а також багатопотоковий тренувальний конвеєр із функціями втрат.",
-          "Загорнутий у десктопний інтерфейс на Qt Widgets, застосунок дозволяє порівнювати нейронний ранжувальник із класичним TF-IDF, переглядати повні метадані (автори, дати, DOI, журнал, анотації), зберігати статті у JSON та експортувати цитати у PlainText, BibTeX і RIS. Проект має 95 пройдених тестів GoogleTest, що покривають матричні операції, токенізацію, ембединги, увагу та трансформерні блоки.",
+          "Biblio_LLM шукає статті в arXiv, PubMed і Semantic Scholar і ранжує результати. Найцікавіше — рушій ранжування: мініатюрна LLM, побудована з основ на C++17 без ML-фреймворків — власна матрична математика, токенайзери (словниковий і Byte-Pair Encoding), ембединги, увага й повноцінні трансформерні блоки та багатопотоковий тренувальний конвеєр.",
+          "Загорнутий у десктопний інтерфейс на Qt Widgets, застосунок порівнює нейронний ранжувальник із TF-IDF, показує повні метадані, зберігає статті у JSON та експортує цитати у PlainText, BibTeX і RIS — і має 95 пройдених тестів GoogleTest.",
         ],
       },
       highlights: {
@@ -192,60 +203,6 @@ const DATA = {
   ],
 
   /* --------------------------------------------------------------------- */
-  // TODO: update the period / dates below to your real timeline.
-  experience: [
-    {
-      role: { en: "Software Engineer — ScanScore", ua: "Інженер-програміст — ScanScore" },
-      period: { en: "Mar 2025 — Mar 2026", ua: "бер. 2025 — бер. 2026" },
-      stack: "C++ · Qt5 Widgets / QML",
-      points: {
-        en: [
-          "Built the algorithm and UI for notes shared between two simultaneous melodic lines - assignment, timing recalculation, layout, undo/redo and save/load.",
-          "Extended the image-recognition engine, hard-wired for five-line staves, to also detect and rebuild single-line staves straight from the scan.",
-          "Added a new editable boxed-text element end to end - from detection in the scan to its edit dialog, copy/paste and MusicXML export.",
-          "Fixed crashes and incorrect-output bugs; owned release versioning and direct client communication - regularly delivering mid/senior-scoped work as a junior.",
-        ],
-        ua: [
-          "Побудував алгоритм і UI для нот, спільних між двома одночасними мелодійними лініями - призначення, перерахунок часу, верстка, undo/redo та збереження/завантаження.",
-          "Розширив механізм розпізнавання зображення, прив'язаний до п'ятилінійних нотоносців, щоб він також виявляв і відтворював однолінійні нотоносці прямо зі скана.",
-          "Наскрізно додав новий редагований елемент тексту в рамці - від виявлення у скані до діалогу редагування, copy/paste та експорту в MusicXML.",
-          "Виправляв краші та баги з некоректним результатом; вів версіонування релізів і пряму комунікацію з клієнтом - регулярно закриваючи задачі рівня мід/сеньйор, будучи джуном.",
-        ],
-      },
-    },
-    {
-      role: { en: "Software Engineer — PiobMaster Pro", ua: "Інженер-програміст — PiobMaster Pro" },
-      period: { en: "Mar 2026 — Present", ua: "бер. 2026 — тепер" },
-      stack: "C++ · MFC",
-      points: {
-        en: [
-          "Added editing algorithms and dialogs for an instrument-specific notation tool.",
-          "Maintained and debugged the MFC codebase; managed versioning and client feedback.",
-        ],
-        ua: [
-          "Додавав алгоритми редагування та діалоги для специфічного під інструмент нотного редактора.",
-          "Підтримував і налагоджував MFC-кодову базу; керував версіями та зворотним звʼязком клієнта.",
-        ],
-      },
-    },
-    {
-      role: { en: "Personal project — Biblio_LLM (Bachelor’s thesis)", ua: "Особистий проект — Biblio_LLM (бакалаврська)" },
-      period: { en: "2026", ua: "2026" },
-      stack: "C++17 · Qt · CMake",
-      points: {
-        en: [
-          "Designed and built a transformer-based LLM from scratch to rank academic papers.",
-          "Multi-source search, neural vs. TF-IDF ranking, citation export, 95 automated tests.",
-        ],
-        ua: [
-          "Спроектував і побудував трансформерну LLM з нуля для ранжування наукових статей.",
-          "Пошук з кількох джерел, нейронне vs TF-IDF ранжування, експорт цитат, 95 автотестів.",
-        ],
-      },
-    },
-  ],
-
-  /* --------------------------------------------------------------------- */
   education: [
     {
       school: { en: "Ivan Franko National University of Lviv", ua: "Львівський національний університет імені Івана Франка" },
@@ -260,7 +217,6 @@ const DATA = {
     nav_about:      { en: "About",      ua: "Про мене" },
     nav_skills:     { en: "Skills",     ua: "Навички" },
     nav_projects:   { en: "Projects",   ua: "Проекти" },
-    nav_experience: { en: "Experience", ua: "Досвід" },
     nav_education:  { en: "Education",   ua: "Освіта" },
 
     hero_cta_projects: { en: "View projects", ua: "Переглянути проекти" },
@@ -269,7 +225,6 @@ const DATA = {
     section_about:      { en: "About",          ua: "Про мене" },
     section_skills:     { en: "Skills",         ua: "Навички" },
     section_projects:   { en: "Projects",       ua: "Проекти" },
-    section_experience: { en: "Experience",     ua: "Досвід" },
     section_education:  { en: "Education",       ua: "Освіта" },
 
     project_view:   { en: "View project →", ua: "Детальніше →" },
