@@ -83,8 +83,8 @@ const DATA = {
       name: "ScanScore",
       featured: true,
       type: { en: "Commercial · Work", ua: "Комерційний · Робота" },
-      stack: "C++ · Qt5 Widgets / QML",
-      tags: ["C++", "Qt5", "QML", "OCR", "Legacy"],
+      stack: "C++11 · Qt5 · Tesseract · OpenCV · CMake",
+      tags: ["C++11", "Qt5", "OCR", "Tesseract", "OpenCV"],
       summary: {
         en: "A music-notation editor whose core idea is built-in score recognition: feed it an image of sheet music and the whole score appears as editable musical objects.",
         ua: "Редактор нотного запису, ключова ідея якого - вбудоване розпізнавання партитур: подаєш зображення нот, і вся партитура з'являється у вигляді редагованих музичних об'єктів.",
@@ -113,7 +113,7 @@ const DATA = {
           "Вів версіонування релізів.",
         ],
       },
-      tech: ["C++", "Qt5 Widgets", "QML", "Optical Character Recognition", "MusicXML export", "Legacy code"],
+      tech: ["C++11", "Qt5 (Widgets, Multimedia, PDF)", "Tesseract", "OpenCV", "CMake"],
       links: [], // proprietary — no public repository
     },
 
