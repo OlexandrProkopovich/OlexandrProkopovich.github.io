@@ -67,7 +67,6 @@ function renderHome(lang) {
         <h3>${esc(pr.name)}</h3>
         <span class="project-stack">${esc(pr.stack)}</span>
         <p class="project-summary">${esc(t(pr.summary, lang))}</p>
-        <div class="project-tags">${chips(pr.tags)}</div>
         <div class="project-foot"><span class="project-link">${esc(t(u.project_view, lang))}</span></div>
       </div>
     </a>`).join("");
