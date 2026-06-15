@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a142c"/><stop offset="1" stop-color="#0a0e16"/>
+    </linearGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b18cff"/><stop offset="1" stop-color="#6aa8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <g stroke="#2a3a59" stroke-width="2">
+    <line x1="120" y1="170" x2="680" y2="170"/>
+    <line x1="120" y1="205" x2="680" y2="205"/>
+    <line x1="120" y1="240" x2="680" y2="240"/>
+    <line x1="120" y1="275" x2="680" y2="275"/>
+    <line x1="120" y1="310" x2="680" y2="310"/>
+  </g>
+  <!-- grace-note cluster (piobaireachd ornament motif) -->
+  <g fill="url(#ac)">
+    <ellipse cx="300" cy="240" rx="22" ry="16"/>
+    <circle cx="250" cy="150" r="7"/><circle cx="278" cy="150" r="7"/><circle cx="306" cy="150" r="7"/><circle cx="334" cy="150" r="7"/>
+  </g>
+  <g stroke="url(#ac)" stroke-width="3">
+    <line x1="320" y1="235" x2="320" y2="120"/>
+    <line x1="250" y1="150" x2="250" y2="120"/><line x1="278" y1="150" x2="278" y2="120"/>
+    <line x1="306" y1="150" x2="306" y2="120"/><line x1="334" y1="150" x2="334" y2="120"/>
+    <line x1="250" y1="120" x2="334" y2="120"/>
+  </g>
+  <g fill="url(#ac)">
+    <ellipse cx="470" cy="205" rx="22" ry="16"/>
+    <ellipse cx="590" cy="275" rx="22" ry="16"/>
+  </g>
+  <g stroke="url(#ac)" stroke-width="3">
+    <line x1="490" y1="200" x2="490" y2="100"/>
+    <line x1="610" y1="270" x2="610" y2="170"/>
+  </g>
+  <text x="120" y="378" font-family="JetBrains Mono, monospace" font-size="22" fill="#9aabc4">PiobMaster Pro</text>
+  <text x="120" y="406" font-family="JetBrains Mono, monospace" font-size="14" fill="#6f819c">C++ · MFC · Bagpipe notation</text>
+</svg>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olexandr Prokopovych — C++ / Qt Software Engineer</title>
+  <meta name="description" content="Portfolio of Olexandr Prokopovych — C++ / Qt software engineer. Projects: ScanScore, PiobMaster Pro, Biblio_LLM." />
+  <meta property="og:title" content="Olexandr Prokopovych — C++ / Qt Software Engineer" />
+  <meta property="og:description" content="Desktop & music-software engineer. ScanScore, PiobMaster Pro, Biblio_LLM." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo"><span class="dot"></span>OP<span style="color:var(--muted-2)">.dev</span></a>
+      <div class="nav-links" id="nav-links"></div>
+      <div class="nav-right">
+        <div class="lang-toggle" id="lang-toggle">
+          <button data-lang="en">EN</button>
+          <button data-lang="ua">UA</button>
+        </div>
+        <button class="nav-burger" id="nav-burger" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero section" id="hero">
+    <div class="container">
+      <div class="hero-inner" id="hero-inner"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title reveal" id="t-about"></h2>
+        <div class="about-grid reveal" id="about-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal" id="t-skills"></h2>
+        <div class="skills-grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title reveal" id="t-projects"></h2>
+        <p class="section-sub reveal" id="projects-sub"></p>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section-title reveal" id="t-experience"></h2>
+        <div class="timeline reveal" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal" id="t-contact"></h2>
+        <div class="contact-card reveal" id="contact-card"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner" id="footer-inner"></div>
+  </footer>
+
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
