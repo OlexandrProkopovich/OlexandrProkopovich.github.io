@@ -58,13 +58,10 @@ const DATA = {
     {
       title: { en: "Protocols & Interfaces", ua: "Протоколи та інтерфейси" },
       items: [
-        "Modbus RTU / TCP",
-        "GPIB / SCPI (NI-488.2)",
-        "USB CDC (binary)",
-        "WebSocket RFC 6455",
-        "MIDI WinMM / DirectMusic",
-        "TCP/IP / UDP",
-        "HTTP REST / JSON",
+        "TCP",
+        "SMTP / IMAP",
+        "SSH",
+        "TLS",
       ],
     },
     {
