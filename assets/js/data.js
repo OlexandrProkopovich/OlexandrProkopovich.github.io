@@ -13,8 +13,8 @@ const DATA = {
       ua: "Розробник ПЗ C++ / Qt",
     },
     tagline: {
-      en: "I build and maintain desktop applications for music notation — from optical score recognition to from-scratch transformer models.",
-      ua: "Розробляю та підтримую десктопні застосунки для нотного запису — від оптичного розпізнавання партитур до трансформерів, написаних з нуля.",
+      en: "I design algorithms and keep large legacy desktop codebases healthy — currently building music-notation software.",
+      ua: "Проектую алгоритми та підтримую великі legacy-кодові бази десктопних застосунків — зараз працюю над ПЗ для нотного запису.",
     },
     location: { en: "Lviv, Ukraine", ua: "Львів, Україна" },
     // TODO: replace assets/img/profile.svg with a real photo (keep the path or update it).
@@ -32,12 +32,12 @@ const DATA = {
   /* --------------------------------------------------------------------- */
   about: {
     en: [
-      "Software engineer focused on C++ desktop applications in the music-notation domain. My day-to-day work is adding features and dialogs that solve concrete user problems, designing new algorithms, and keeping large legacy codebases healthy.",
+      "Software engineer focused on C++ desktop applications. I design new algorithms and keep large legacy codebases healthy.",
       "I’ve shipped recognition and editing features for professional scorewriting tools, dug into decade-old code to extend it safely, fixed long-standing bugs, managed versioning, and communicated directly with clients to turn vague requests into working features.",
       "On the side I explore machine learning from first principles — I built a small transformer-based LLM entirely from scratch in C++ to rank academic papers.",
     ],
     ua: [
-      "Інженер-програміст, що спеціалізується на десктопних застосунках C++ у сфері нотного запису. Щодня додаю функції та діалоги, які вирішують конкретні проблеми користувачів, проектую нові алгоритми та підтримую великі legacy-кодові бази у робочому стані.",
+      "Інженер-програміст, що спеціалізується на десктопних застосунках C++. Проектую нові алгоритми та підтримую великі legacy-кодові бази у робочому стані.",
       "Реалізовував функції розпізнавання й редагування для професійних нотних редакторів, заглиблювався у код десятирічної давнини, щоб безпечно його розширювати, виправляв давні баги, керував версіонуванням і напряму спілкувався з клієнтами, перетворюючи розмиті запити на готові функції.",
       "У вільний час вивчаю машинне навчання з основ — написав невелику LLM на трансформерах повністю з нуля на C++ для ранжування наукових статей.",
     ],
@@ -47,7 +47,7 @@ const DATA = {
   skills: [
     {
       title: { en: "Languages", ua: "Мови" },
-      items: ["C++ (11/14/17)", "C", "Python", "QML", "JavaScript"],
+      items: ["C++ (11/14/17)", "C", "Python", "QML"],
     },
     {
       title: { en: "Frameworks & Tools", ua: "Фреймворки та інструменти" },
@@ -56,7 +56,7 @@ const DATA = {
     {
       title: { en: "Domains", ua: "Напрями" },
       items: [
-        "Optical Music Recognition (OMR)",
+        "Optical Character Recognition (OCR)",
         "Music notation engraving",
         "Legacy code maintenance",
         "Algorithm design",
@@ -74,39 +74,40 @@ const DATA = {
       featured: true,
       type: { en: "Commercial · Work", ua: "Комерційний · Робота" },
       stack: "C++ · Qt5 Widgets / QML",
-      tags: ["C++", "Qt5", "QML", "OMR", "Legacy"],
-      image: "assets/img/scanscore.svg",
+      tags: ["C++", "Qt5", "QML", "OCR", "Legacy"],
       summary: {
         en: "A music-notation editor whose core idea is built-in score recognition: feed it an image of sheet music and the whole score appears as editable musical objects.",
         ua: "Редактор нотного запису, ключова ідея якого — вбудоване розпізнавання партитур: подаєш зображення нот, і вся партитура зʼявляється у вигляді редагованих музичних обʼєктів.",
       },
       description: {
         en: [
-          "ScanScore is a desktop scorewriting application built with C++ and Qt5 (Widgets and QML). Its defining feature is optical music recognition (OMR): instead of typing every note, a user imports an image of a score and the application reconstructs it as a tree of musical objects — staves, voices, notes, articulations — that can then be edited like any hand-entered score.",
-          "My role was feature and maintenance engineering on top of a large, long-lived codebase: implementing new algorithms and dialogs that solve real user problems, extending the recognition engine, fixing long-standing bugs, managing release versions, and communicating directly with the client to shape requirements.",
+          "ScanScore is a desktop scorewriting application built with C++ and Qt5 (Widgets and QML). Its defining feature is optical character recognition (OCR): instead of typing every note, a user imports an image of a score and the application reconstructs it as a tree of musical objects — staves, voices, notes, articulations — that can then be edited like any hand-entered score.",
+          "I started on ScanScore as a junior and steadily took ownership of high-priority, cross-cutting features that touch the entire pipeline — optical recognition, the in-memory music model, layout and rendering, the editing UI, and MusicXML export. Several of these were the kind of work usually scoped to mid/senior engineers, delivered end to end on a large, decade-old codebase.",
+          "Three of the larger ones: shared notes between voices — a high-priority feature with its own voice-distribution algorithm; recognition and full editing of one-line percussion staves in an engine that had only ever assumed 5-line staves; and a brand-new \"Rehearsal Mark\" text category, from OCR detection through to its edit dialog and MusicXML export. Alongside the features I fixed long-standing bugs and crashes, owned release versioning, and communicated directly with the client to turn vague requests into shipped functionality.",
         ],
         ua: [
-          "ScanScore — це десктопний нотний редактор на C++ та Qt5 (Widgets і QML). Його визначальна функція — оптичне розпізнавання нот (OMR): замість того, щоб вводити кожну ноту вручну, користувач імпортує зображення партитури, а застосунок відтворює її як дерево музичних обʼєктів — стейви, голоси, ноти, артикуляції — які потім можна редагувати, як будь-яку введену вручну партитуру.",
-          "Моя роль — інженерія функцій і підтримка великої довгоживучої кодової бази: реалізація нових алгоритмів і діалогів, що вирішують реальні проблеми користувачів, розширення механізму розпізнавання, виправлення давніх багів, керування версіями релізів і пряме спілкування з клієнтом для формування вимог.",
+          "ScanScore — це десктопний нотний редактор на C++ та Qt5 (Widgets і QML). Його визначальна функція — оптичне розпізнавання (OCR): замість того, щоб вводити кожну ноту вручну, користувач імпортує зображення партитури, а застосунок відтворює її як дерево музичних обʼєктів — стейви, голоси, ноти, артикуляції — які потім можна редагувати, як будь-яку введену вручну партитуру.",
+          "Я почав на ScanScore джуном і поступово брав на себе високопріоритетні наскрізні функції, що зачіпають увесь конвеєр — оптичне розпізнавання, музичну модель у памʼяті, верстку й рендеринг, UI редагування та експорт MusicXML. Частина з них — це робота рівня мід/сеньйор, доведена від початку до кінця у великій кодовій базі десятирічної давнини.",
+          "Три з більших: спільні ноти між голосами — високопріоритетна функція з власним алгоритмом розподілу голосів; розпізнавання й повноцінне редагування однолінійних ударних стейвів у механізмі, який досі припускав лише 5-лінійні; і цілком нова текстова категорія «Rehearsal Mark» — від OCR-розпізнавання аж до діалогу редагування й експорту MusicXML. Поряд із функціями виправляв давні баги та краші, відповідав за версіонування релізів і напряму спілкувався з клієнтом, перетворюючи розмиті запити на готову функціональність.",
         ],
       },
       highlights: {
         en: [
-          "Extended the legacy recognition engine to handle single-line staves — the existing code was hard-coded for 5-line staves only.",
-          "Designed an algorithm for notes shared between voices.",
-          "Added a dialog and logic for assigning abbreviations to staves.",
-          "Fixed long-standing bugs across old, unfamiliar code paths.",
-          "Owned release versioning and direct client communication.",
+          "Shared Notes (high-priority feature, SS-693): designed and shipped the algorithm and UI for notes shared between voices — voice distribution, time-slice recalculation, beam/slur handling, error-mask clearing, undo/redo and serialization. A cross-cutting feature spanning recognition, the music model and rendering.",
+          "One-line percussion staves: extended the OCR engine — previously hard-coded for 5-line staves — to detect and reconstruct single-line drum staves end to end: candidate detection with false-positive filtering, eStaff_OneLine_Drum assignment, drum-clef rendering, beam adaptation to OCR content bounds, and post-OCR layout fixes.",
+          "Rehearsal Mark text category (SS-755): added OCR recognition via bitmap-piece detection, a text-based CScRehearsalMark model, UI insertion and a double-click edit dialog with font/frame settings, multi-mark stacking per bar, MusicXML export, undo/redo and copy/paste.",
+          "Hardened the scanning pipeline: fixed multiple crashes (invalid voice index, volta bracket, MIDI export, division-by-zero), incorrect bar typing and runaway beam geometry.",
+          "Owned release versioning and direct client communication — repeatedly taking on mid/senior-scoped tasks as a junior and turning vague requests into shipped features.",
         ],
         ua: [
-          "Розширив legacy-механізм розпізнавання для роботи з однолінійними стейвами — наявний код був жорстко прописаний лише під 5-лінійні.",
-          "Спроектував алгоритм для нот, спільних між голосами (shared notes).",
-          "Додав діалог і логіку призначення абревіатур стейвам.",
-          "Виправляв давні баги у старих, незнайомих ділянках коду.",
-          "Відповідав за версіонування релізів і пряму комунікацію з клієнтом.",
+          "Shared Notes (високопріоритетна функція, SS-693): спроектував і випустив алгоритм та UI для нот, спільних між голосами — розподіл голосів, перерахунок time-slice, обробка beam/slur, очищення error-mask, undo/redo та серіалізація. Наскрізна функція, що охоплює розпізнавання, музичну модель і рендеринг.",
+          "Однолінійні ударні стейви: розширив OCR-механізм — раніше жорстко прописаний лише під 5-лінійні стейви — для наскрізного виявлення та відтворення однолінійних ударних стейвів: виявлення кандидатів із фільтрацією хибних спрацювань, призначення eStaff_OneLine_Drum, рендеринг ударного ключа, адаптація beam до меж OCR-контенту та виправлення верстки після OCR.",
+          "Текстова категорія Rehearsal Mark (SS-755): додав OCR-розпізнавання через детекцію bitmap-фрагментів, текстову модель CScRehearsalMark, вставку через UI та діалог редагування по подвійному кліку з налаштуваннями шрифту/рамки, стекування кількох позначок у такті, експорт MusicXML, undo/redo та copy/paste.",
+          "Зміцнив конвеєр сканування: виправив низку крашів (невалідний індекс голосу, volta bracket, експорт MIDI, ділення на нуль), некоректне визначення типу такту та розбіжну геометрію beam.",
+          "Відповідав за версіонування релізів і пряму комунікацію з клієнтом — неодноразово брав задачі рівня мід/сеньйор, будучи джуном, і перетворював розмиті запити на готові функції.",
         ],
       },
-      tech: ["C++", "Qt5 Widgets", "QML", "Optical Music Recognition", "Legacy code"],
+      tech: ["C++", "Qt5 Widgets", "QML", "Optical Character Recognition", "MusicXML export", "Legacy code"],
       links: [], // proprietary — no public repository
     },
 
@@ -117,7 +118,6 @@ const DATA = {
       type: { en: "Commercial · Work", ua: "Комерційний · Робота" },
       stack: "C++ · MFC",
       tags: ["C++", "MFC", "Notation"],
-      image: "assets/img/piobmaster.svg",
       summary: {
         en: "A specialised scorewriter for creating piobaireachd (Highland bagpipe) notation from scratch — tailored entirely to the conventions of that instrument.",
         ua: "Спеціалізований нотний редактор для створення партитур piobaireachd (волинка) з нуля — повністю заточений під нотацію саме цього інструмента.",
@@ -155,7 +155,6 @@ const DATA = {
       type: { en: "Pet project · Bachelor’s thesis", ua: "Пет-проект · Бакалаврська робота" },
       stack: "C++17 · Qt Widgets · CMake",
       tags: ["C++17", "Qt", "LLM", "Transformer", "CMake"],
-      image: "assets/img/biblio.svg",
       summary: {
         en: "A desktop app that searches, ranks, saves and exports academic papers — powered by a small transformer-based LLM I wrote entirely from scratch in C++.",
         ua: "Десктопний застосунок для пошуку, ранжування, збереження й експорту наукових статей — на основі невеликої LLM-моделі на трансформерах, написаної повністю з нуля на C++.",
@@ -198,26 +197,26 @@ const DATA = {
   experience: [
     {
       role: { en: "Software Engineer — ScanScore", ua: "Інженер-програміст — ScanScore" },
-      period: { en: "20XX — Present", ua: "20XX — тепер" },
+      period: { en: "Mar 2025 — Mar 2026", ua: "бер. 2025 — бер. 2026" },
       stack: "C++ · Qt5 Widgets / QML",
       points: {
         en: [
-          "Add new algorithms and dialogs solving real user problems on a large legacy codebase.",
-          "Extended the OMR engine to recognise single-line staves (legacy code assumed 5 lines).",
-          "Implemented shared-notes-between-voices logic; fixed long-standing bugs; managed versioning.",
-          "Communicated directly with the client to refine requirements.",
+          "Designed and shipped Shared Notes (SS-693) — a high-priority feature with its own voice-distribution algorithm, time-slice recalculation, undo/redo and serialization.",
+          "Extended the OCR engine to detect and fully edit one-line percussion staves end to end (legacy code assumed 5-line staves only).",
+          "Built a new \"Rehearsal Mark\" text category from OCR recognition through to its edit dialog and MusicXML export.",
+          "Hardened the scanning pipeline against crashes; fixed long-standing bugs; owned release versioning and direct client communication — regularly delivering mid/senior-scoped tasks as a junior.",
         ],
         ua: [
-          "Додаю нові алгоритми та діалоги, що вирішують реальні проблеми користувачів, у великій legacy-кодовій базі.",
-          "Розширив OMR-механізм для розпізнавання однолінійних стейвів (legacy-код припускав 5 ліній).",
-          "Реалізував логіку спільних нот між голосами; виправляв давні баги; керував версіонуванням.",
-          "Напряму спілкувався з клієнтом для уточнення вимог.",
+          "Спроектував і випустив Shared Notes (SS-693) — високопріоритетну функцію з власним алгоритмом розподілу голосів, перерахунком time-slice, undo/redo та серіалізацією.",
+          "Розширив OCR-механізм для наскрізного виявлення та повноцінного редагування однолінійних ударних стейвів (legacy-код припускав лише 5-лінійні).",
+          "Створив нову текстову категорію «Rehearsal Mark» — від OCR-розпізнавання до діалогу редагування й експорту MusicXML.",
+          "Зміцнив конвеєр сканування проти крашів; виправляв давні баги; відповідав за версіонування релізів і пряму комунікацію з клієнтом — регулярно закриваючи задачі рівня мід/сеньйор, будучи джуном.",
         ],
       },
     },
     {
       role: { en: "Software Engineer — PiobMaster Pro", ua: "Інженер-програміст — PiobMaster Pro" },
-      period: { en: "20XX — Present", ua: "20XX — тепер" },
+      period: { en: "Mar 2026 — Present", ua: "бер. 2026 — тепер" },
       stack: "C++ · MFC",
       points: {
         en: [
@@ -232,7 +231,7 @@ const DATA = {
     },
     {
       role: { en: "Personal project — Biblio_LLM (Bachelor’s thesis)", ua: "Особистий проект — Biblio_LLM (бакалаврська)" },
-      period: { en: "20XX", ua: "20XX" },
+      period: { en: "2026", ua: "2026" },
       stack: "C++17 · Qt · CMake",
       points: {
         en: [
@@ -248,28 +247,31 @@ const DATA = {
   ],
 
   /* --------------------------------------------------------------------- */
+  education: [
+    {
+      school: { en: "Ivan Franko National University of Lviv", ua: "Львівський національний університет імені Івана Франка" },
+      degree: { en: "Bachelor’s degree, Computer Science", ua: "Бакалавр, компʼютерні науки" },
+      period: { en: "2022 — 2026", ua: "2022 — 2026" },
+    },
+  ],
+
+  /* --------------------------------------------------------------------- */
   /* UI strings */
   ui: {
     nav_about:      { en: "About",      ua: "Про мене" },
     nav_skills:     { en: "Skills",     ua: "Навички" },
     nav_projects:   { en: "Projects",   ua: "Проекти" },
     nav_experience: { en: "Experience", ua: "Досвід" },
-    nav_contact:    { en: "Contact",    ua: "Контакти" },
+    nav_education:  { en: "Education",   ua: "Освіта" },
 
     hero_cta_projects: { en: "View projects", ua: "Переглянути проекти" },
-    hero_cta_contact:  { en: "Get in touch",  ua: "Звʼязатися" },
     hero_resume:       { en: "Download CV",   ua: "Завантажити CV" },
 
     section_about:      { en: "About",          ua: "Про мене" },
     section_skills:     { en: "Skills",         ua: "Навички" },
     section_projects:   { en: "Projects",       ua: "Проекти" },
     section_experience: { en: "Experience",     ua: "Досвід" },
-    section_contact:    { en: "Get in touch",   ua: "Звʼязатися" },
-
-    contact_text: {
-      en: "Open to interesting C++ / Qt and desktop engineering work. The fastest way to reach me is email.",
-      ua: "Відкритий до цікавих задач на C++ / Qt та десктоп-розробки. Найшвидше зі мною звʼязатися поштою.",
-    },
+    section_education:  { en: "Education",       ua: "Освіта" },
 
     project_view:   { en: "View project →", ua: "Детальніше →" },
     project_back:   { en: "← Back to all projects", ua: "← До всіх проектів" },

@@ -10,7 +10,7 @@ function renderHome(lang) {
   /* nav */
   const navItems = [
     ["#about", u.nav_about], ["#skills", u.nav_skills], ["#projects", u.nav_projects],
-    ["#experience", u.nav_experience], ["#contact", u.nav_contact],
+    ["#experience", u.nav_experience], ["#education", u.nav_education],
   ];
   el("nav-links").innerHTML = navItems
     .map(([href, label]) => `<a href="${href}">${esc(t(label, lang))}</a>`)
@@ -29,7 +29,6 @@ function renderHome(lang) {
       <p class="hero-role">${esc(t(p.tagline, lang))}</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#projects">${esc(t(u.hero_cta_projects, lang))}</a>
-        <a class="btn" href="#contact">${esc(t(u.hero_cta_contact, lang))}</a>
         ${resumeBtn}
       </div>
       <div class="hero-socials">${socials}</div>
@@ -46,7 +45,7 @@ function renderHome(lang) {
     <div class="about-text">${aboutParas}</div>
     <div class="about-facts">
       <div class="fact"><div class="k">${lang === "ua" ? "Локація" : "Location"}</div><div class="v">${esc(t(p.location, lang))}</div></div>
-      <div class="fact"><div class="k">${lang === "ua" ? "Фокус" : "Focus"}</div><div class="v">C++ · Qt · Desktop · OMR</div></div>
+      <div class="fact"><div class="k">${lang === "ua" ? "Фокус" : "Focus"}</div><div class="v">C++ · Qt · Desktop · OCR</div></div>
       <div class="fact"><div class="k">${lang === "ua" ? "Проектів" : "Projects"}</div><div class="v">${DATA.projects.length}</div></div>
     </div>`;
 
@@ -63,7 +62,6 @@ function renderHome(lang) {
     : "The main projects I’ve worked on the most.";
   el("projects-grid").innerHTML = DATA.projects.map((pr) => `
     <a class="project-card reveal" href="project.html?id=${encodeURIComponent(pr.id)}">
-      <div class="project-cover"><img src="${esc(pr.image)}" alt="${esc(pr.name)}" loading="lazy" /></div>
       <div class="project-body">
         <span class="project-type">${esc(t(pr.type, lang))}</span>
         <h3>${esc(pr.name)}</h3>
@@ -84,12 +82,14 @@ function renderHome(lang) {
       <ul>${(t(x.points, lang) || []).map((pt) => `<li>${esc(pt)}</li>`).join("")}</ul>
     </div>`).join("");
 
-  /* contact */
-  el("t-contact").textContent = t(u.section_contact, lang);
-  const contactActions = p.socials
-    .map((s) => `<a class="btn" href="${esc(s.url)}" target="_blank" rel="noopener">${socialIcon(s.type)}<span>${esc(s.label)}</span></a>`)
-    .join("");
-  el("contact-card").innerHTML = `<p>${esc(t(u.contact_text, lang))}</p><div class="contact-actions">${contactActions}</div>`;
+  /* education */
+  el("t-education").textContent = t(u.section_education, lang);
+  el("education-list").innerHTML = DATA.education.map((e) => `
+    <div class="tl-item">
+      <div class="tl-period">${esc(t(e.period, lang))}</div>
+      <div class="tl-role">${esc(t(e.school, lang))}</div>
+      <div class="tl-stack">${esc(t(e.degree, lang))}</div>
+    </div>`).join("");
 
   /* footer */
   const footSocials = p.socials

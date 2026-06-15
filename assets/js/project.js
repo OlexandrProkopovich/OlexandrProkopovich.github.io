@@ -11,7 +11,7 @@ function renderNav(lang) {
   const u = DATA.ui;
   el("nav-links").innerHTML =
     `<a href="index.html#projects">${esc(t(u.section_projects, lang))}</a>` +
-    `<a href="index.html#contact">${esc(t(u.nav_contact, lang))}</a>`;
+    `<a href="index.html#education">${esc(t(u.nav_education, lang))}</a>`;
   const footSocials = DATA.profile.socials
     .map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener" aria-label="${esc(s.label)}" title="${esc(s.label)}">${socialIcon(s.type)}</a>`)
     .join("");
@@ -56,7 +56,6 @@ function renderProject(lang) {
       <h1>${esc(pr.name)}</h1>
       <span class="project-stack">${esc(pr.stack)}</span>
     </div>
-    <img class="detail-hero-img reveal" src="${esc(pr.image)}" alt="${esc(pr.name)}" />
     <div class="detail-grid">
       <div class="detail-main reveal">
         <div class="detail-block">
