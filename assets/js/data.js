@@ -7,7 +7,7 @@
 const DATA = {
   /* --------------------------------------------------------------------- */
   profile: {
-    name: "Olexandr Prokopovych",
+    name: "Oleksandr Prokopovych",
     role: {
       en: "C++ / Qt Software Engineer",
       ua: "Розробник ПЗ C++ / Qt",

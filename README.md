@@ -1,6 +1,6 @@
 # OlexandrProkopovich.github.io
 
-Personal portfolio / CV site of **Olexandr Prokopovych** — C++ / Qt software engineer.
+Personal portfolio / CV site of **Oleksandr Prokopovych** — C++ / Qt software engineer.
 
 Plain HTML + CSS + JavaScript (no build step, no frameworks). Bilingual **EN / UA**
 with a language switch in the navbar. All content is data-driven.

@@ -40,7 +40,7 @@ function renderProject(lang) {
     return;
   }
 
-  document.title = `${pr.name} — Olexandr Prokopovych`;
+  document.title = `${pr.name} — Oleksandr Prokopovych`;
 
   const desc = (t(pr.description, lang) || []).map((x) => `<p>${esc(x)}</p>`).join("");
   const highlights = (t(pr.highlights, lang) || []).map((x) => `<li>${esc(x)}</li>`).join("");
