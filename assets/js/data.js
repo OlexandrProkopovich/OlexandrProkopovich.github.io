@@ -91,27 +91,25 @@ const DATA = {
       description: {
         en: [
           "ScanScore is a desktop scorewriting app in C++ and Qt5. Its defining feature is optical recognition: a user imports a photo or scan of sheet music and the app reconstructs it as a structured, fully editable document - staves, notes and other symbols become real objects you can move, change and export.",
-          "I started here as a junior and took ownership of features running through the whole pipeline - recognition, the in-memory document model, layout/rendering, the editing UI and file export. Most of the work was about data structures, geometry and image analysis rather than music theory, and several pieces were normally scoped to mid/senior engineers.",
         ],
         ua: [
           "ScanScore - десктопний нотний редактор на C++ та Qt5. Його ключова ідея - оптичне розпізнавання: користувач імпортує фото чи скан нот, а застосунок відтворює їх як структурований, повністю редагований документ - нотоносці, ноти й інші символи стають реальними об'єктами, які можна рухати, змінювати й експортувати.",
-          "Я почав тут джуном і брав на себе функції, що проходять крізь увесь конвеєр - розпізнавання, документну модель у пам'яті, верстку/рендеринг, UI редагування та експорт. Більша частина роботи стосувалася структур даних, геометрії й аналізу зображень, а не музичної теорії, а частину задач зазвичай доручають мід-/сеньйор-інженерам.",
         ],
       },
       highlights: {
         en: [
-          "Shared notes: built the algorithm and UI for notes that belong to two independent melodic lines at the same time - deciding which line each note goes to, recalculating timing positions, and keeping the on-screen layout, save/load and undo/redo all consistent. It cut across the whole stack: recognition, the in-memory document model and rendering.",
-          "Single-line staves: the recognition engine was hard-wired to assume every staff has five lines. I extended it to also detect and rebuild single-line (percussion) staves straight from the scanned image - separating real staff lines from noise such as text, then correcting how the recognized content gets positioned.",
-          "Rehearsal markers: added a brand-new labeled-text element (the boxed letters used to coordinate rehearsals) end to end - detecting it in the scan, representing it in the document model, an edit dialog, plus copy/paste, undo/redo and export to MusicXML (the standard score-exchange format).",
-          "Stability: tracked down and fixed several crashes in the scanning pipeline and a class of incorrect-output bugs.",
-          "Ownership: handled release versioning and worked directly with the client, repeatedly turning vague requests into shipped features - and taking on work normally scoped to mid/senior engineers while still a junior.",
+          "Designed a non-trivial algorithm for the case where one element is shared by two parallel sequences at once - deciding which sequence each element belongs to, then keeping everything that depends on it in sync: timing, on-screen layout, save/load and undo/redo. The feature ran end to end across the whole stack - recognition, the in-memory document model and rendering.",
+          "Extended a core recognition routine that had been hard-wired to a single assumed layout so it also handles a previously unsupported variant - detecting the new pattern in the scanned image, telling real signal apart from noise such as stray text, and correcting how the recognized content is positioned.",
+          "Added a brand-new editable element (a small text label placed on the document) end to end - detecting it in the scanned image, modelling it in the document, building its edit dialog, and wiring up copy/paste, undo/redo and export to the standard interchange format.",
+          "Tracked down and fixed a series of crashes in the scanning pipeline and a class of incorrect-output bugs.",
+          "Owned release versioning and worked directly with the client, repeatedly turning loosely-specified requests into shipped features - and taking on work normally scoped to mid/senior engineers while still a junior.",
         ],
         ua: [
-          "Спільні ноти: побудував алгоритм і UI для нот, що належать одночасно до двох незалежних мелодійних ліній - вирішення, до якої лінії йде кожна нота, перерахунок позицій у часі та збереження узгодженими екранної верстки, збереження/завантаження й undo/redo. Функція пронизала весь стек: розпізнавання, документну модель і рендеринг.",
-          "Однолінійні нотоносці: механізм розпізнавання був жорстко прив'язаний до п'ятилінійного нотоносця. Я розширив його так, щоб він також виявляв і відтворював однолінійні (ударні) нотоносці прямо зі скана - відрізняючи справжні лінії нотоносця від шуму на кшталт тексту й коригуючи позиціонування розпізнаного вмісту.",
-          "Репетиційні позначки: наскрізно додав цілком новий елемент тексту в рамці (позначки, якими координують репетиції) - від виявлення у скані й представлення в документній моделі до діалогу редагування, copy/paste, undo/redo та експорту в MusicXML (стандартний формат обміну нотами).",
-          "Стабільність: знайшов і виправив низку крашів у конвеєрі сканування та клас багів із некоректним результатом.",
-          "Відповідальність: вів версіонування релізів і працював напряму з клієнтом, неодноразово перетворюючи розмиті запити на готові функції - і брав задачі рівня мід/сеньйор, ще будучи джуном.",
+          "Спроектував нетривіальний алгоритм для випадку, коли один елемент одночасно належить двом паралельним послідовностям - визначення, до якої послідовності йде кожен елемент, і подальше узгодження всього, що від цього залежить: час, екранна верстка, збереження/завантаження та undo/redo. Функція працювала наскрізно через увесь стек - розпізнавання, документну модель у пам'яті й рендеринг.",
+          "Розширив ключову процедуру розпізнавання, що була жорстко прив'язана до єдиного очікуваного формату, щоб вона також обробляла раніше непідтримуваний варіант - виявлення нового патерну у скані, відрізнення справжнього сигналу від шуму на кшталт випадкового тексту й коригування позиціонування розпізнаного вмісту.",
+          "Наскрізно додав цілком новий редагований елемент (невелику текстову позначку на документі) - від виявлення у скані й представлення в документній моделі до діалогу редагування, copy/paste, undo/redo та експорту в стандартний формат обміну.",
+          "Знайшов і виправив низку крашів у конвеєрі сканування та клас багів із некоректним результатом.",
+          "Вів версіонування релізів і працював напряму з клієнтом, неодноразово перетворюючи нечітко сформульовані запити на готові функції - і брав задачі рівня мід/сеньйор, ще будучи джуном.",
         ],
       },
       tech: ["C++", "Qt5 Widgets", "QML", "Optical Character Recognition", "MusicXML export", "Legacy code"],
