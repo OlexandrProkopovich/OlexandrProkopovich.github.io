@@ -23,8 +23,7 @@ const DATA = {
       { type: "email",    label: "Email",    url: "mailto:sashaprokop1234@gmail.com" },
       { type: "github",   label: "GitHub",   url: "https://github.com/OlexandrProkopovich" },
       { type: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/oleksandr-prokopovych-82b848210/" },
-      // TODO: set your real Telegram username below.
-      { type: "telegram", label: "Telegram", url: "https://t.me/your_username" },
+      { type: "telegram", label: "Telegram", url: "https://t.me/wkyrt" },
     ],
   },
 

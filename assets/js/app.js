@@ -46,7 +46,7 @@ function renderHome(lang) {
     <div class="about-facts">
       <div class="fact"><div class="k">${lang === "ua" ? "Робота" : "Work"}</div><div class="v">CDev · ${lang === "ua" ? "бер. 2025 — тепер" : "Mar 2025 — present"}</div></div>
       <div class="fact"><div class="k">${lang === "ua" ? "Локація" : "Location"}</div><div class="v">${esc(t(p.location, lang))}</div></div>
-      <div class="fact"><div class="k">${lang === "ua" ? "Фокус" : "Focus"}</div><div class="v">C++ · Qt · Desktop · OCR</div></div>
+      <div class="fact"><div class="k">${lang === "ua" ? "Фокус" : "Focus"}</div><div class="v">C++ · Qt · Desktop · Networking</div></div>
     </div>`;
 
   /* skills */
