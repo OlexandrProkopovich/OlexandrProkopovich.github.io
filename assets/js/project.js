@@ -74,7 +74,7 @@ function renderProject(lang) {
       <aside class="detail-aside reveal">
         <div class="skill-card">
           <h3>${esc(t(u.project_tech, lang))}</h3>
-          <div class="chips">${chips(pr.tech)}</div>
+          <ul class="skill-list">${pr.tech.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
         </div>
         ${linksBlock}
       </aside>
