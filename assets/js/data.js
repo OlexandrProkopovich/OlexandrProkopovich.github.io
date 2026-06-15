@@ -70,7 +70,8 @@ const DATA = {
         "Python / Flask",
         "HTML5 / CSS3 / JS",
         "MySQL / SQLite",
-        "Git / GitPython",
+        "Git / GitHub / Bitbucket",
+        "Jira",
       ],
     },
   ],
@@ -229,8 +230,6 @@ const DATA = {
     project_tech:   { en: "Tech stack", ua: "Технології" },
     project_links:  { en: "Links", ua: "Посилання" },
     project_notfound: { en: "Project not found.", ua: "Проект не знайдено." },
-
-    footer_built: { en: "Built with plain HTML, CSS & JS.", ua: "Зроблено на чистому HTML, CSS та JS." },
   },
 };
 

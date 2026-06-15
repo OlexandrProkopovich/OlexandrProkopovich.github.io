@@ -86,7 +86,7 @@ function renderHome(lang) {
     .map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener" aria-label="${esc(s.label)}" title="${esc(s.label)}">${socialIcon(s.type)}</a>`)
     .join("");
   el("footer-inner").innerHTML = `
-    <span>© ${new Date().getFullYear()} ${esc(p.name)} · ${esc(t(u.footer_built, lang))}</span>
+    <span>© ${new Date().getFullYear()} ${esc(p.name)}</span>
     <div class="footer-socials">${footSocials}</div>`;
 
   markLangActive(lang);
