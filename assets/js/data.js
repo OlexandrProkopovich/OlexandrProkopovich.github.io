@@ -122,8 +122,8 @@ const DATA = {
       name: "PiobMaster Pro",
       featured: true,
       type: { en: "Commercial · Work", ua: "Комерційний · Робота" },
-      stack: "C++ · MFC",
-      tags: ["C++", "MFC", "Notation"],
+      stack: "C++11 · MFC",
+      tags: ["C++11", "MFC"],
       summary: {
         en: "A specialised scorewriter for creating piobaireachd (Highland bagpipe) notation from scratch — tailored entirely to the conventions of that instrument.",
         ua: "Спеціалізований нотний редактор для створення партитур piobaireachd (волинка) з нуля — повністю заточений під нотацію саме цього інструмента.",
@@ -150,7 +150,7 @@ const DATA = {
           "Керував версіями та враховував прямий зворотний звʼязок клієнта.",
         ],
       },
-      tech: ["C++", "MFC", "Windows desktop", "Music notation"],
+      tech: ["C++11", "MFC"],
       links: [],
     },
 
