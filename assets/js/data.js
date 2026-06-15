@@ -17,8 +17,7 @@ const DATA = {
       ua: "Проектую алгоритми та підтримую великі legacy-кодові бази десктопних застосунків — зараз працюю над ПЗ для нотного запису.",
     },
     location: { en: "Lviv, Ukraine", ua: "Львів, Україна" },
-    // TODO: replace assets/img/profile.svg with a real photo (keep the path or update it).
-    photo: "assets/img/profile.svg",
+    photo: "assets/img/profile.jpg",
     resume: "", // optional: path to a PDF CV, e.g. "assets/cv.pdf"
     socials: [
       { type: "email",    label: "Email",    url: "mailto:sashaprokop1234@gmail.com" },
@@ -77,34 +76,34 @@ const DATA = {
       tags: ["C++", "Qt5", "QML", "OCR", "Legacy"],
       summary: {
         en: "A music-notation editor whose core idea is built-in score recognition: feed it an image of sheet music and the whole score appears as editable musical objects.",
-        ua: "Редактор нотного запису, ключова ідея якого — вбудоване розпізнавання партитур: подаєш зображення нот, і вся партитура зʼявляється у вигляді редагованих музичних обʼєктів.",
+        ua: "Редактор нотного запису, ключова ідея якого - вбудоване розпізнавання партитур: подаєш зображення нот, і вся партитура з'являється у вигляді редагованих музичних об'єктів.",
       },
       description: {
         en: [
-          "ScanScore is a desktop scorewriting application built with C++ and Qt5 (Widgets and QML). Its defining feature is optical character recognition (OCR): instead of typing every note, a user imports an image of a score and the application reconstructs it as a tree of musical objects — staves, voices, notes, articulations — that can then be edited like any hand-entered score.",
-          "I started on ScanScore as a junior and steadily took ownership of high-priority, cross-cutting features that touch the entire pipeline — optical recognition, the in-memory music model, layout and rendering, the editing UI, and MusicXML export. Several of these were the kind of work usually scoped to mid/senior engineers, delivered end to end on a large, decade-old codebase.",
-          "Three of the larger ones: shared notes between voices — a high-priority feature with its own voice-distribution algorithm; recognition and full editing of one-line percussion staves in an engine that had only ever assumed 5-line staves; and a brand-new \"Rehearsal Mark\" text category, from OCR detection through to its edit dialog and MusicXML export. Alongside the features I fixed long-standing bugs and crashes, owned release versioning, and communicated directly with the client to turn vague requests into shipped functionality.",
+          "ScanScore is a desktop scorewriting application built with C++ and Qt5 (Widgets and QML). Its defining feature is optical recognition: instead of entering every note by hand, a user imports a photo or scan of sheet music and the app reconstructs it as a structured, fully editable document - the staves, notes and other symbols become real objects you can move, change and export again.",
+          "I started here as a junior and gradually took ownership of features that run through the entire pipeline - the recognition step, the in-memory document model, layout and rendering, the editing UI, and file export. Several were the kind of work usually handed to mid or senior engineers, delivered end to end on a large codebase that had been maintained for years.",
+          "The larger ones were algorithmic and cross-cutting rather than cosmetic, and most of the engineering had little to do with music theory and a lot to do with data structures, geometry and image analysis. Alongside the features I tracked down crashes, owned release versioning, and translated loosely-specified client requests into working functionality.",
         ],
         ua: [
-          "ScanScore — це десктопний нотний редактор на C++ та Qt5 (Widgets і QML). Його визначальна функція — оптичне розпізнавання (OCR): замість того, щоб вводити кожну ноту вручну, користувач імпортує зображення партитури, а застосунок відтворює її як дерево музичних обʼєктів — стейви, голоси, ноти, артикуляції — які потім можна редагувати, як будь-яку введену вручну партитуру.",
-          "Я почав на ScanScore джуном і поступово брав на себе високопріоритетні наскрізні функції, що зачіпають увесь конвеєр — оптичне розпізнавання, музичну модель у памʼяті, верстку й рендеринг, UI редагування та експорт MusicXML. Частина з них — це робота рівня мід/сеньйор, доведена від початку до кінця у великій кодовій базі десятирічної давнини.",
-          "Три з більших: спільні ноти між голосами — високопріоритетна функція з власним алгоритмом розподілу голосів; розпізнавання й повноцінне редагування однолінійних ударних стейвів у механізмі, який досі припускав лише 5-лінійні; і цілком нова текстова категорія «Rehearsal Mark» — від OCR-розпізнавання аж до діалогу редагування й експорту MusicXML. Поряд із функціями виправляв давні баги та краші, відповідав за версіонування релізів і напряму спілкувався з клієнтом, перетворюючи розмиті запити на готову функціональність.",
+          "ScanScore - десктопний нотний редактор на C++ та Qt5 (Widgets і QML). Його ключова ідея - оптичне розпізнавання: замість того щоб вводити кожну ноту вручну, користувач імпортує фото чи скан нот, а застосунок відтворює їх як структурований, повністю редагований документ - нотоносці, ноти й інші символи стають реальними об'єктами, які можна рухати, змінювати й експортувати назад.",
+          "Я почав тут джуном і поступово брав на себе функції, що проходять крізь увесь конвеєр - етап розпізнавання, документну модель у пам'яті, верстку й рендеринг, UI редагування та експорт файлів. Частина з них - це робота, яку зазвичай доручають мід- чи сеньйор-інженерам, доведена від початку до кінця у великій кодовій базі, яку підтримують роками.",
+          "Найбільші задачі були радше алгоритмічні й наскрізні, ніж косметичні, і більша частина інженерії стосувалася не музичної теорії, а структур даних, геометрії та аналізу зображень. Поряд із функціями я відловлював краші, відповідав за версіонування релізів і перетворював нечітко сформульовані запити клієнта на робочу функціональність.",
         ],
       },
       highlights: {
         en: [
-          "Shared Notes (high-priority feature, SS-693): designed and shipped the algorithm and UI for notes shared between voices — voice distribution, time-slice recalculation, beam/slur handling, error-mask clearing, undo/redo and serialization. A cross-cutting feature spanning recognition, the music model and rendering.",
-          "One-line percussion staves: extended the OCR engine — previously hard-coded for 5-line staves — to detect and reconstruct single-line drum staves end to end: candidate detection with false-positive filtering, eStaff_OneLine_Drum assignment, drum-clef rendering, beam adaptation to OCR content bounds, and post-OCR layout fixes.",
-          "Rehearsal Mark text category (SS-755): added OCR recognition via bitmap-piece detection, a text-based CScRehearsalMark model, UI insertion and a double-click edit dialog with font/frame settings, multi-mark stacking per bar, MusicXML export, undo/redo and copy/paste.",
-          "Hardened the scanning pipeline: fixed multiple crashes (invalid voice index, volta bracket, MIDI export, division-by-zero), incorrect bar typing and runaway beam geometry.",
-          "Owned release versioning and direct client communication — repeatedly taking on mid/senior-scoped tasks as a junior and turning vague requests into shipped features.",
+          "Shared notes: built the algorithm and UI for notes that belong to two independent melodic lines at the same time - deciding which line each note goes to, recalculating timing positions, and keeping the on-screen layout, save/load and undo/redo all consistent. It cut across the whole stack: recognition, the in-memory document model and rendering.",
+          "Single-line staves: the recognition engine was hard-wired to assume every staff has five lines. I extended it to also detect and rebuild single-line (percussion) staves straight from the scanned image - separating real staff lines from noise such as text, then correcting how the recognized content gets positioned.",
+          "Rehearsal markers: added a brand-new labeled-text element (the boxed letters used to coordinate rehearsals) end to end - detecting it in the scan, representing it in the document model, an edit dialog, plus copy/paste, undo/redo and export to MusicXML (the standard score-exchange format).",
+          "Stability: tracked down and fixed several crashes in the scanning pipeline and a class of incorrect-output bugs.",
+          "Ownership: handled release versioning and worked directly with the client, repeatedly turning vague requests into shipped features - and taking on work normally scoped to mid/senior engineers while still a junior.",
         ],
         ua: [
-          "Shared Notes (високопріоритетна функція, SS-693): спроектував і випустив алгоритм та UI для нот, спільних між голосами — розподіл голосів, перерахунок time-slice, обробка beam/slur, очищення error-mask, undo/redo та серіалізація. Наскрізна функція, що охоплює розпізнавання, музичну модель і рендеринг.",
-          "Однолінійні ударні стейви: розширив OCR-механізм — раніше жорстко прописаний лише під 5-лінійні стейви — для наскрізного виявлення та відтворення однолінійних ударних стейвів: виявлення кандидатів із фільтрацією хибних спрацювань, призначення eStaff_OneLine_Drum, рендеринг ударного ключа, адаптація beam до меж OCR-контенту та виправлення верстки після OCR.",
-          "Текстова категорія Rehearsal Mark (SS-755): додав OCR-розпізнавання через детекцію bitmap-фрагментів, текстову модель CScRehearsalMark, вставку через UI та діалог редагування по подвійному кліку з налаштуваннями шрифту/рамки, стекування кількох позначок у такті, експорт MusicXML, undo/redo та copy/paste.",
-          "Зміцнив конвеєр сканування: виправив низку крашів (невалідний індекс голосу, volta bracket, експорт MIDI, ділення на нуль), некоректне визначення типу такту та розбіжну геометрію beam.",
-          "Відповідав за версіонування релізів і пряму комунікацію з клієнтом — неодноразово брав задачі рівня мід/сеньйор, будучи джуном, і перетворював розмиті запити на готові функції.",
+          "Спільні ноти: побудував алгоритм і UI для нот, що належать одночасно до двох незалежних мелодійних ліній - вирішення, до якої лінії йде кожна нота, перерахунок позицій у часі та збереження узгодженими екранної верстки, збереження/завантаження й undo/redo. Функція пронизала весь стек: розпізнавання, документну модель і рендеринг.",
+          "Однолінійні нотоносці: механізм розпізнавання був жорстко прив'язаний до п'ятилінійного нотоносця. Я розширив його так, щоб він також виявляв і відтворював однолінійні (ударні) нотоносці прямо зі скана - відрізняючи справжні лінії нотоносця від шуму на кшталт тексту й коригуючи позиціонування розпізнаного вмісту.",
+          "Репетиційні позначки: наскрізно додав цілком новий елемент тексту в рамці (позначки, якими координують репетиції) - від виявлення у скані й представлення в документній моделі до діалогу редагування, copy/paste, undo/redo та експорту в MusicXML (стандартний формат обміну нотами).",
+          "Стабільність: знайшов і виправив низку крашів у конвеєрі сканування та клас багів із некоректним результатом.",
+          "Відповідальність: вів версіонування релізів і працював напряму з клієнтом, неодноразово перетворюючи розмиті запити на готові функції - і брав задачі рівня мід/сеньйор, ще будучи джуном.",
         ],
       },
       tech: ["C++", "Qt5 Widgets", "QML", "Optical Character Recognition", "MusicXML export", "Legacy code"],
@@ -162,11 +161,11 @@ const DATA = {
       description: {
         en: [
           "Biblio_LLM searches across arXiv, PubMed and Semantic Scholar, then ranks the results. The interesting part is the ranking engine: a miniature large language model built from first principles in C++17 — no ML frameworks. It implements its own matrix math and activations, tokenizers (a vocabulary-based one and a Byte-Pair Encoding variant), embeddings, attention layers, feed-forward and full transformer blocks, plus a multi-threaded training pipeline with loss functions.",
-          "The app lets users compare the neural ranker against a classic TF-IDF baseline, view rich metadata (authors, dates, DOI, journal, abstracts), save articles as JSON, and export citations in PlainText, BibTeX and RIS. The project ships with 95 passing GoogleTest cases covering matrix ops, tokenization, embeddings, attention and transformer blocks.",
+          "Wrapped in a Qt Widgets desktop interface, the app lets users compare the neural ranker against a classic TF-IDF baseline, view rich metadata (authors, dates, DOI, journal, abstracts), save articles as JSON, and export citations in PlainText, BibTeX and RIS. The project ships with 95 passing GoogleTest cases covering matrix ops, tokenization, embeddings, attention and transformer blocks.",
         ],
         ua: [
           "Biblio_LLM шукає статті в arXiv, PubMed і Semantic Scholar, а потім ранжує результати. Найцікавіше — рушій ранжування: мініатюрна велика мовна модель, побудована з основ на C++17 без ML-фреймворків. Вона реалізує власну матричну математику й активації, токенайзери (на основі словника та варіант Byte-Pair Encoding), ембединги, шари уваги, feed-forward і повноцінні трансформерні блоки, а також багатопотоковий тренувальний конвеєр із функціями втрат.",
-          "Застосунок дозволяє порівнювати нейронний ранжувальник із класичним TF-IDF, переглядати повні метадані (автори, дати, DOI, журнал, анотації), зберігати статті у JSON та експортувати цитати у PlainText, BibTeX і RIS. Проект має 95 пройдених тестів GoogleTest, що покривають матричні операції, токенізацію, ембединги, увагу та трансформерні блоки.",
+          "Загорнутий у десктопний інтерфейс на Qt Widgets, застосунок дозволяє порівнювати нейронний ранжувальник із класичним TF-IDF, переглядати повні метадані (автори, дати, DOI, журнал, анотації), зберігати статті у JSON та експортувати цитати у PlainText, BibTeX і RIS. Проект має 95 пройдених тестів GoogleTest, що покривають матричні операції, токенізацію, ембединги, увагу та трансформерні блоки.",
         ],
       },
       highlights: {
@@ -201,16 +200,16 @@ const DATA = {
       stack: "C++ · Qt5 Widgets / QML",
       points: {
         en: [
-          "Designed and shipped Shared Notes (SS-693) — a high-priority feature with its own voice-distribution algorithm, time-slice recalculation, undo/redo and serialization.",
-          "Extended the OCR engine to detect and fully edit one-line percussion staves end to end (legacy code assumed 5-line staves only).",
-          "Built a new \"Rehearsal Mark\" text category from OCR recognition through to its edit dialog and MusicXML export.",
-          "Hardened the scanning pipeline against crashes; fixed long-standing bugs; owned release versioning and direct client communication — regularly delivering mid/senior-scoped tasks as a junior.",
+          "Built the algorithm and UI for notes shared between two simultaneous melodic lines - assignment, timing recalculation, layout, undo/redo and save/load.",
+          "Extended the image-recognition engine, hard-wired for five-line staves, to also detect and rebuild single-line staves straight from the scan.",
+          "Added a new editable boxed-text element end to end - from detection in the scan to its edit dialog, copy/paste and MusicXML export.",
+          "Fixed crashes and incorrect-output bugs; owned release versioning and direct client communication - regularly delivering mid/senior-scoped work as a junior.",
         ],
         ua: [
-          "Спроектував і випустив Shared Notes (SS-693) — високопріоритетну функцію з власним алгоритмом розподілу голосів, перерахунком time-slice, undo/redo та серіалізацією.",
-          "Розширив OCR-механізм для наскрізного виявлення та повноцінного редагування однолінійних ударних стейвів (legacy-код припускав лише 5-лінійні).",
-          "Створив нову текстову категорію «Rehearsal Mark» — від OCR-розпізнавання до діалогу редагування й експорту MusicXML.",
-          "Зміцнив конвеєр сканування проти крашів; виправляв давні баги; відповідав за версіонування релізів і пряму комунікацію з клієнтом — регулярно закриваючи задачі рівня мід/сеньйор, будучи джуном.",
+          "Побудував алгоритм і UI для нот, спільних між двома одночасними мелодійними лініями - призначення, перерахунок часу, верстка, undo/redo та збереження/завантаження.",
+          "Розширив механізм розпізнавання зображення, прив'язаний до п'ятилінійних нотоносців, щоб він також виявляв і відтворював однолінійні нотоносці прямо зі скана.",
+          "Наскрізно додав новий редагований елемент тексту в рамці - від виявлення у скані до діалогу редагування, copy/paste та експорту в MusicXML.",
+          "Виправляв краші та баги з некоректним результатом; вів версіонування релізів і пряму комунікацію з клієнтом - регулярно закриваючи задачі рівня мід/сеньйор, будучи джуном.",
         ],
       },
     },

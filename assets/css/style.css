@@ -267,7 +267,9 @@ a { color: inherit; text-decoration: none; }
 .detail-block ul { color: var(--muted); padding-left: 20px; margin: 0; }
 .detail-block li { margin-bottom: 8px; }
 .detail-aside .skill-card { margin-bottom: 16px; }
-.detail-links { display: flex; flex-direction: column; gap: 10px; }
+.detail-links { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.detail-links .btn { padding: 8px 14px; font-size: 0.85rem; }
+.detail-links .btn svg { width: 16px; height: 16px; }
 
 /* -------------------------------------------------------------- reveal */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }

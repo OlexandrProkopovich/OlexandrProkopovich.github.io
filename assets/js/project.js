@@ -9,9 +9,13 @@ function currentProject() {
 
 function renderNav(lang) {
   const u = DATA.ui;
-  el("nav-links").innerHTML =
-    `<a href="index.html#projects">${esc(t(u.section_projects, lang))}</a>` +
-    `<a href="index.html#education">${esc(t(u.nav_education, lang))}</a>`;
+  const navItems = [
+    ["about", u.nav_about], ["skills", u.nav_skills], ["projects", u.nav_projects],
+    ["experience", u.nav_experience], ["education", u.nav_education],
+  ];
+  el("nav-links").innerHTML = navItems
+    .map(([id, label]) => `<a href="index.html#${id}">${esc(t(label, lang))}</a>`)
+    .join("");
   const footSocials = DATA.profile.socials
     .map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener" aria-label="${esc(s.label)}" title="${esc(s.label)}">${socialIcon(s.type)}</a>`)
     .join("");
