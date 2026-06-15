@@ -52,7 +52,7 @@ const DATA = {
         "Qt5 Widgets",
         "MFC / Win32 API",
         "CMake / Ninja / MSBuild",
-        "MSVC / arm-none-eabi-gcc",
+        "MSVC",
       ],
     },
     {
